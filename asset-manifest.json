@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EV-map/static/css/main.abd64e84.css",
+    "main.js": "/EV-map/static/js/main.66b444de.js",
+    "index.html": "/EV-map/index.html",
+    "main.abd64e84.css.map": "/EV-map/static/css/main.abd64e84.css.map",
+    "main.66b444de.js.map": "/EV-map/static/js/main.66b444de.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.66b444de.js"
+  ]
+}
