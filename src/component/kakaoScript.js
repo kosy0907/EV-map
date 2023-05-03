@@ -1,4 +1,4 @@
-import react, { useEffect, useMemo } from "react";
+import react, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { elevatorLocation } from "../data/elevatorLocation";
 const { kakao } = window;
@@ -9,6 +9,8 @@ const MapDiv = styled.div`
 `
 
 export default function KakaoMapScript({ searchText }) {
+    const [map, setMap] = useState(null);
+
     const markers = useMemo(() => {
         const markers = [];
         for (var i = 0; i < elevatorLocation.DATA.length; i++) {
@@ -38,10 +40,11 @@ export default function KakaoMapScript({ searchText }) {
             center: new kakao.maps.LatLng(37.566826, 126.9786567),
             level: 3
         };
-        const map = new kakao.maps.Map(container, options);
+        const newMap = new kakao.maps.Map(container, options);
+        setMap(newMap);
 
         for (var j = 0; j < markers.length; j++) {
-            markers[j].setMap(map);
+            markers[j].setMap(newMap);
         }
 
         const getCurrentPos = () => {
@@ -52,7 +55,7 @@ export default function KakaoMapScript({ searchText }) {
                         var lon = position.coords.longitude;
                         var currentPos = new kakao.maps.LatLng(lat, lon);
                         var marker = new kakao.maps.Marker({
-                            map: map,
+                            map: newMap,
                             position: currentPos,
                             image: new kakao.maps.MarkerImage(
                                 "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
@@ -60,11 +63,12 @@ export default function KakaoMapScript({ searchText }) {
                                 { offset: new kakao.maps.Point(13, 35) }
                             )
                         });
-                        map.setCenter(currentPos);
+                        newMap.setCenter(currentPos);
                     },
                     function (err) {
                         options.center = new kakao.maps.LatLng(37.566826, 126.9786567);
-                        const map = new kakao.maps.Map(container, options);
+                        const newMap = new kakao.maps.Map(container, options);
+                        setMap(newMap);
                     })
             }
         }
@@ -80,8 +84,8 @@ export default function KakaoMapScript({ searchText }) {
             console.log(filteredPoint);
             const moveLotation = new kakao.maps.LatLng(parseFloat(filteredPoint[1]), parseFloat(filteredPoint[0]));
             console.log(moveLotation);
-            kakao.maps.event.addListener(map, "tilesloaded", function () {
-                map.panTo(moveLotation);
+            kakao.maps.event.addListener(newMap, "tilesloaded", function () {
+                newMap.panTo(moveLotation);
             }
             )
         }
