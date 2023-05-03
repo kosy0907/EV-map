@@ -1,5 +1,5 @@
 # EV-map
-링크: [EV-map](https://)
+링크: [EV-map](https://kosy0907.github.io/EV-map)
 
 ## 📑 역할
 - Design
