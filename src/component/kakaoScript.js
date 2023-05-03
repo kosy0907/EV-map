@@ -1,6 +1,12 @@
 import react, { useEffect, useMemo } from "react";
+import styled from "styled-components";
 import { elevatorLocation } from "../data/elevatorLocation";
 const { kakao } = window;
+
+const MapDiv = styled.div`
+    width: '100%',
+    height: '100vh'
+`
 
 export default function KakaoMapScript({ searchText }) {
     const markers = useMemo(() => {
@@ -82,6 +88,6 @@ export default function KakaoMapScript({ searchText }) {
     }, [searchText, markers]);
 
     return (
-        <div id="kakao-map" style={{ width: "100%", height: "100vh" }} />
+        <MapDiv id="kakao-map" style={{ width: "100%", height: "100vh" }} />
     )
 }
