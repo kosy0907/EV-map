@@ -78,7 +78,7 @@ const Search = (props) => {
     return (
         <SearchContainer>
             <Form onSubmit={handleSubmit}>
-                <Input type='text' value={inputText} onChange={handleInputChange} placeholder='역명을 입력하세요! ex) 혜화' />
+                <Input type='text' value={inputText} onChange={handleInputChange} placeholder='역명을 입력하세요! ex) 혜화 / 혜화역' />
                 <SearchBtn type='submit' onClick={textChecker}><FontAwesomeIcon icon={faSearch} /></SearchBtn>
             </Form>
         </SearchContainer>

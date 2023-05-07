@@ -77,7 +77,7 @@ export default function KakaoMapScript({ searchText }) {
 
             if (searchText) {
                 const filteredLocations = elevatorLocation.DATA.filter(location => {
-                    const regex = new RegExp(searchText.replace('역', '') + '역?'); // 정규표현식 생성
+                    const regex = new RegExp(searchText.replace('역', '') + '역?');
                     if (location.sw_nm === null) {
                         return regex.test(location.emd_nm);
                     } else {
@@ -89,9 +89,7 @@ export default function KakaoMapScript({ searchText }) {
                 if (filteredLocations.length > 0) {
                     const regex = /\d+\.\d+/g;
                     const filteredPoint = filteredLocations[0].node_wkt.match(regex);
-                    console.log(filteredPoint);
                     const moveLotation = new kakao.maps.LatLng(parseFloat(filteredPoint[1]), parseFloat(filteredPoint[0]));
-                    console.log(moveLotation);
                     kakao.maps.event.addListener(newMap, 'tilesloaded', function () {
                         newMap.panTo(moveLotation);
                     }

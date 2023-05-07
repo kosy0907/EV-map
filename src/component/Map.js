@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import KakaoMapScript from './kakaoScript';
 import Search from './Search';
 const { kakao } = window;
