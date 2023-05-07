@@ -35,7 +35,6 @@ export default function KakaoMapScript({ searchText }) {
 
     useEffect(() => {
         kakao.maps.load(() => {
-            // kakao map
             const container = document.getElementById('kakao-map');
             const options = {
                 center: new kakao.maps.LatLng(37.566826, 126.9786567),
@@ -89,9 +88,7 @@ export default function KakaoMapScript({ searchText }) {
                 if (filteredLocations.length > 0) {
                     const regex = /\d+\.\d+/g;
                     const filteredPoint = filteredLocations[0].node_wkt.match(regex);
-                    console.log(filteredPoint);
                     const moveLotation = new kakao.maps.LatLng(parseFloat(filteredPoint[1]), parseFloat(filteredPoint[0]));
-                    console.log(moveLotation);
                     kakao.maps.event.addListener(newMap, 'tilesloaded', function () {
                         newMap.panTo(moveLotation);
                     }
