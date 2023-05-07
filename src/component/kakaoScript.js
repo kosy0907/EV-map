@@ -76,7 +76,7 @@ export default function KakaoMapScript({ searchText }) {
 
             if (searchText) {
                 const filteredLocations = elevatorLocation.DATA.filter(location => {
-                    const regex = new RegExp(searchText.replace('역', '') + '역?'); // 정규표현식 생성
+                    const regex = new RegExp(searchText.replace('역', '') + '역?');
                     if (location.sw_nm === null) {
                         return regex.test(location.emd_nm);
                     } else {
