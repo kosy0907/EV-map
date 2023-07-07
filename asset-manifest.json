@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/EV-map/static/css/main.abd64e84.css",
-    "main.js": "/EV-map/static/js/main.8b25d4bc.js",
+    "main.css": "/EV-map/static/css/main.15e5dae1.css",
+    "main.js": "/EV-map/static/js/main.80e9dd4c.js",
     "index.html": "/EV-map/index.html",
-    "main.abd64e84.css.map": "/EV-map/static/css/main.abd64e84.css.map",
-    "main.8b25d4bc.js.map": "/EV-map/static/js/main.8b25d4bc.js.map"
+    "main.15e5dae1.css.map": "/EV-map/static/css/main.15e5dae1.css.map",
+    "main.80e9dd4c.js.map": "/EV-map/static/js/main.80e9dd4c.js.map"
   },
   "entrypoints": [
-    "static/css/main.abd64e84.css",
-    "static/js/main.8b25d4bc.js"
+    "static/css/main.15e5dae1.css",
+    "static/js/main.80e9dd4c.js"
   ]
 }
