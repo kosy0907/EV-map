@@ -7,8 +7,10 @@ const SearchContainer = styled.div`
     width: 100%;
     height: 5rem;
     position: absolute;
-    top: 5rem;
+    top: 10rem;
+    left: 50%;
     z-index: 100;
+    transform: translate(-50%, -50%);
 `
 
 const Form = styled.form`
