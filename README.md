@@ -4,6 +4,8 @@
 ## 📑 역할
 - Design
 - FrontEnd
+- BackEnd
+- Test
 - Deploy
 
 ## 💬 프로젝트 소개
